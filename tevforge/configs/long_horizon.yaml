@@ -1,0 +1,34 @@
+# tevforge long-horizon profile (hours-to-days tasks)
+world:
+  action_space_size: 12
+  horizon_min: 24
+  horizon_max: 64
+  seed: 20261022
+
+model:
+  backend: mock
+  skill: 0.5
+  model_id: tev-320b
+  temperature: 0.0
+
+reward:
+  shaping: pprs
+  gamma: 0.99
+  goal_bonus: 1.0
+
+train:
+  group_size: 8
+  learning_rate: 0.15
+  max_steps: 60
+  seed: 20261022
+
+bench:
+  n_tasks: 32
+  group_size: 8
+  seed: 20261022
+
+declared:
+  total_params_b: 320.0
+  ale_cm_pass5: 0.28
+  env_domains: 7
+  gym_envs: 1170

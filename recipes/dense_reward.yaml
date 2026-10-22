@@ -1,0 +1,20 @@
+# Densest possible signal (progress-only, no goal bonus)
+world:
+  action_space_size: 8
+  horizon_min: 6
+  horizon_max: 12
+  seed: 20261022
+
+model:
+  backend: mock
+  skill: 0.5
+
+reward:
+  shaping: dense
+  gamma: 1.0
+  goal_bonus: 0.0
+
+train:
+  group_size: 8
+  learning_rate: 0.25
+  max_steps: 30

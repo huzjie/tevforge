@@ -1,0 +1,12 @@
+# Verifier checklist: every task must satisfy these before training
+verifier:
+  deterministic: true
+  no_llm_judge: true
+  progress_dense: true
+  agrees_with_generator: true
+  seed_reproducible: true
+
+world:
+  action_space_size: 8
+  horizon_min: 8
+  horizon_max: 24

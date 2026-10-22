@@ -1,0 +1,34 @@
+# tevforge dense-reward profile (shortest, densest signal)
+world:
+  action_space_size: 8
+  horizon_min: 6
+  horizon_max: 12
+  seed: 20261022
+
+model:
+  backend: mock
+  skill: 0.5
+  model_id: tev-27b
+  temperature: 0.0
+
+reward:
+  shaping: dense
+  gamma: 1.0
+  goal_bonus: 1.0
+
+train:
+  group_size: 8
+  learning_rate: 0.25
+  max_steps: 30
+  seed: 20261022
+
+bench:
+  n_tasks: 128
+  group_size: 8
+  seed: 20261022
+
+declared:
+  total_params_b: 27.0
+  ale_cm_pass5: 0.28
+  env_domains: 7
+  gym_envs: 1170

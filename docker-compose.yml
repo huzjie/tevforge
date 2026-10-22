@@ -1,0 +1,9 @@
+services:
+  tevforge:
+    build: .
+    container_name: tevforge
+    ports:
+      - "8090:8090"
+    environment:
+      - TEVFORGE_CONFIG=/app/tevforge/configs/default.yaml
+    restart: unless-stopped

@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tevforge"
+version = "1.0.0"
+description = "Long-horizon agent dense-reward RL training framework (PPRS + Tev-Gym, zero-dependency reference of UCLA x Adobe Tev)."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "tevforge contributors" }]
+keywords = ["reinforcement-learning", "grpo", "reward-shaping", "long-horizon", "agents", "llm"]
+
+[project.scripts]
+tevforge = "tevforge.serving.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["tevforge*"]

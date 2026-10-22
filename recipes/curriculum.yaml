@@ -1,0 +1,13 @@
+# Horizon curriculum: start short, extend over training
+# (informational; the trainer currently cycles task ids)
+curriculum:
+  stages:
+    - {horizon: 6, n_tasks: 200}
+    - {horizon: 12, n_tasks: 200}
+    - {horizon: 24, n_tasks: 200}
+    - {horizon: 48, n_tasks: 100}
+
+train:
+  group_size: 8
+  learning_rate: 0.2
+  max_steps: 200

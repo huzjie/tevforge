@@ -1,0 +1,21 @@
+# Long-horizon terminal / SWE training with PPRS shaping
+world:
+  action_space_size: 8
+  horizon_min: 8
+  horizon_max: 24
+  seed: 20261022
+
+model:
+  backend: mock
+  skill: 0.5
+  model_id: tev-27b
+
+reward:
+  shaping: pprs
+  gamma: 1.0
+  goal_bonus: 1.0
+
+train:
+  group_size: 8
+  learning_rate: 0.2
+  max_steps: 40

@@ -1,0 +1,14 @@
+# GRPO group-size / learning-rate sweep profile
+train:
+  group_size: 16
+  learning_rate: 0.1
+  max_steps: 40
+
+reward:
+  shaping: pprs
+  gamma: 1.0
+  goal_bonus: 1.0
+
+bench:
+  n_tasks: 64
+  group_size: 16

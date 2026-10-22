@@ -1,0 +1,16 @@
+# Horizon curriculum recipe (short -> long)
+world:
+  action_space_size: 8
+  horizon_min: 4
+  horizon_max: 48
+  seed: 20261022
+
+train:
+  group_size: 8
+  learning_rate: 0.2
+  max_steps: 120
+
+reward:
+  shaping: pprs
+  gamma: 1.0
+  goal_bonus: 1.0

@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tevforge
+  labels:
+    app: tevforge
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tevforge
+  template:
+    metadata:
+      labels:
+        app: tevforge
+    spec:
+      containers:
+        - name: tevforge
+          image: tevforge:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8090
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8090
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"

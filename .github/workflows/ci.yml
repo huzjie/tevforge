@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Compile
+        run: python -m compileall -q tevforge tests examples
+      - name: Unit tests
+        run: python -m unittest discover -s tests -t .
+      - name: Doctor smoke
+        run: python -m tevforge doctor
+      - name: Bench smoke
+        run: python -m tevforge bench
